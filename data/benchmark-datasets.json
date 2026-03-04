@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "title": "AI Red Teaming Benchmark Datasets",
+    "version": "1.0.0",
+    "last_updated": "2026-03-04",
+    "description": "Curated index of published red teaming benchmark datasets from peer-reviewed research"
+  },
+  "datasets": [
+    {
+      "name": "RedBench",
+      "paper": "RedBench: A Universal Dataset for Comprehensive Red Teaming of LLMs",
+      "arxiv": "https://arxiv.org/abs/2601.03699",
+      "year": 2025,
+      "samples": 29362,
+      "source_datasets": 37,
+      "risk_categories": ["violence", "hate_speech", "sexual_content", "self_harm", "illegal_activity", "privacy", "misinformation"],
+      "license": "Research",
+      "github": "https://github.com/YerongLi/RedBench",
+      "highlights": "Consolidates 37 existing datasets with standardized risk categorization"
+    },
+    {
+      "name": "ALERT",
+      "paper": "ALERT: A Comprehensive Benchmark for Assessing Large Language Models Safety through Red Teaming",
+      "arxiv": "https://arxiv.org/abs/2404.08311",
+      "year": 2024,
+      "samples": 45000,
+      "subsets": ["ALERT-standard (15K)", "ALERT-adversarial (30K)"],
+      "risk_categories": ["crime_violence", "substance_abuse", "weapons", "animal_abuse", "political", "privacy", "financial", "hateful_content"],
+      "license": "Apache-2.0",
+      "github": "https://github.com/Babelscape/ALERT",
+      "highlights": "Fine-grained safety taxonomy with both standard and adversarial prompts"
+    },
+    {
+      "name": "HarmBench",
+      "paper": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+      "arxiv": "https://arxiv.org/abs/2402.04249",
+      "year": 2024,
+      "samples": 510,
+      "attack_methods": 18,
+      "risk_categories": ["cybercrime", "chemical_bio", "copyright", "harassment", "misinformation"],
+      "license": "MIT",
+      "github": "https://github.com/centerforaisafety/HarmBench",
+      "highlights": "Standardized framework comparing 18 attack methods and 33 LLMs"
+    },
+    {
+      "name": "AdvBench",
+      "paper": "Universal and Transferable Adversarial Attacks on Aligned Language Models",
+      "arxiv": "https://arxiv.org/abs/2307.15043",
+      "year": 2023,
+      "samples": 520,
+      "subsets": ["harmful_behaviors (520)", "harmful_strings (520)"],
+      "risk_categories": ["harmful_behaviors", "harmful_strings"],
+      "license": "MIT",
+      "github": "https://github.com/llm-attacks/llm-attacks",
+      "highlights": "Foundational GCG adversarial suffix attack benchmark"
+    },
+    {
+      "name": "TrustLLM",
+      "paper": "TrustLLM: Trustworthiness in Large Language Models",
+      "arxiv": "https://arxiv.org/abs/2401.05561",
+      "year": 2024,
+      "dimensions": 8,
+      "risk_categories": ["truthfulness", "safety", "fairness", "robustness", "privacy", "machine_ethics", "transparency", "accountability"],
+      "license": "MIT",
+      "github": "https://github.com/HowieHwong/TrustLLM",
+      "highlights": "Multi-dimensional trustworthiness benchmark across 8 dimensions"
+    },
+    {
+      "name": "JailbreakBench",
+      "paper": "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models",
+      "arxiv": "https://arxiv.org/abs/2404.01318",
+      "year": 2024,
+      "samples": 100,
+      "risk_categories": ["jailbreak_resistance"],
+      "license": "MIT",
+      "github": "https://github.com/JailbreakBench/jailbreakbench",
+      "highlights": "Standardized jailbreak evaluation with reproducible pipeline and leaderboard"
+    },
+    {
+      "name": "SafetyBench",
+      "paper": "SafetyBench: Evaluating the Safety of Large Language Models",
+      "arxiv": "https://arxiv.org/abs/2309.07045",
+      "year": 2023,
+      "samples": 11435,
+      "languages": ["en", "zh"],
+      "risk_categories": ["offensiveness", "unfairness", "physical_health", "mental_health", "illegal_activity", "ethics_morality", "privacy"],
+      "license": "Apache-2.0",
+      "github": "https://github.com/thu-coai/SafetyBench",
+      "highlights": "Multilingual safety benchmark with 7 categories across English and Chinese"
+    },
+    {
+      "name": "WildGuard",
+      "paper": "WildGuard: Open One-Stop Moderation Tools for Safety Risks, Jailbreaks, and Refusals of LLMs",
+      "arxiv": "https://arxiv.org/abs/2406.18495",
+      "year": 2024,
+      "samples": 92000,
+      "risk_categories": ["vanilla_harmful", "adversarial_harmful", "benign"],
+      "license": "Apache-2.0",
+      "github": "https://github.com/allenai/wildguard",
+      "highlights": "Large-scale moderation benchmark with 92K labeled examples"
+    },
+    {
+      "name": "RobustBench",
+      "url": "https://robustbench.github.io/",
+      "year": 2021,
+      "focus": "adversarial_robustness",
+      "attack_type": "AutoAttack (white-box + black-box ensemble)",
+      "license": "Apache-2.0",
+      "github": "https://github.com/RobustBench/robustbench",
+      "highlights": "Standardized adversarial robustness leaderboard using AutoAttack"
+    },
+    {
+      "name": "Red-Teaming Healthcare Dataset",
+      "paper": "Red Teaming for Healthcare Dataset",
+      "year": 2024,
+      "domain": "healthcare",
+      "participants": 80,
+      "license": "Research",
+      "github": "https://github.com/DaneshjouLab/Red-Teaming-Dataset",
+      "highlights": "Domain-specific red teaming by 80 multi-disciplinary healthcare experts"
+    }
+  ],
+  "total_datasets": 10
+}
