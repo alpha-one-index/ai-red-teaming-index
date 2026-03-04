@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "sc": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/"
+  },
+  "@type": "sc:Dataset",
+  "name": "AI Red Teaming Index",
+  "description": "Comprehensive index of AI red teaming tools, frameworks, benchmarks, datasets, and vulnerability leaderboards for LLM safety and adversarial testing.",
+  "url": "https://github.com/alpha-one-index/ai-red-teaming-index",
+  "license": "https://opensource.org/licenses/MIT",
+  "creator": {
+    "@type": "Organization",
+    "name": "Alpha One Index",
+    "url": "https://github.com/alpha-one-index"
+  },
+  "datePublished": "2025-01-01",
+  "dateModified": "2025-01-01",
+  "version": "1.0.0",
+  "keywords": [
+    "ai-red-teaming",
+    "llm-safety",
+    "adversarial-testing",
+    "jailbreak",
+    "vulnerability-assessment",
+    "ai-security",
+    "benchmarks",
+    "datasets"
+  ],
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "name": "red-team-tools",
+      "contentUrl": "data/red-team-tools.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "name": "vulns-leaderboard",
+      "contentUrl": "data/vulns-leaderboard.csv",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "name": "benchmarks",
+      "contentUrl": "data/benchmarks.json",
+      "encodingFormat": "application/json"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "name": "red-team-tools-records",
+      "field": [
+        {"@type": "cr:Field", "name": "name", "dataType": "sc:Text"},
+        {"@type": "cr:Field", "name": "category", "dataType": "sc:Text"},
+        {"@type": "cr:Field", "name": "license", "dataType": "sc:Text"},
+        {"@type": "cr:Field", "name": "github_stars", "dataType": "sc:Integer"}
+      ]
+    }
+  ]
+}
