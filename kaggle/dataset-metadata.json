@@ -1,0 +1,32 @@
+{
+  "title": "AI Red Teaming Index",
+  "id": "alpha-one-index/ai-red-teaming-index",
+  "licenses": [
+    {
+      "name": "MIT"
+    }
+  ],
+  "keywords": [
+    "ai-red-teaming",
+    "llm-safety",
+    "adversarial-testing",
+    "jailbreak",
+    "vulnerability-assessment",
+    "ai-security",
+    "benchmarks"
+  ],
+  "resources": [
+    {
+      "path": "red-team-tools.json",
+      "description": "AI red teaming tools and frameworks index"
+    },
+    {
+      "path": "vulns-leaderboard.csv",
+      "description": "LLM vulnerability leaderboard scores"
+    },
+    {
+      "path": "benchmarks.json",
+      "description": "AI safety and red teaming benchmarks"
+    }
+  ]
+}
