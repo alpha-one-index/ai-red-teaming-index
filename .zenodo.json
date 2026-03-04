@@ -1,0 +1,43 @@
+{
+  "title": "AI Red Teaming Index: Comprehensive Tools, Benchmarks, and Vulnerability Data",
+  "description": "A structured, open-source reference for AI red teaming tools, frameworks, benchmarks, datasets, and vulnerability leaderboards. Covers 50+ tools, 8 risk categories, and regulatory mappings for EU AI Act, UK AISI, and NIST AI RMF.",
+  "upload_type": "dataset",
+  "creators": [
+    {
+      "name": "Alpha One Index",
+      "affiliation": "Independent AI Security Research"
+    }
+  ],
+  "keywords": [
+    "ai-red-teaming",
+    "llm-security",
+    "adversarial-testing",
+    "ai-safety",
+    "vulnerability-leaderboard",
+    "jailbreak",
+    "prompt-injection",
+    "nist-ai-rmf",
+    "eu-ai-act"
+  ],
+  "license": {
+    "id": "MIT"
+  },
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/alpha-one-index/ai-red-teaming-index",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/alpha-one-index/ai-infra-index",
+      "relation": "isPartOf",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/alpha-one-index/ai-trism-index",
+      "relation": "isPartOf",
+      "scheme": "url"
+    }
+  ]
+}
