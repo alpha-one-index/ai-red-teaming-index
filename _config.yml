@@ -1,0 +1,11 @@
+title: AI Red Teaming Index
+description: Comprehensive AI red teaming index - tools, frameworks, benchmarks, datasets, and vulnerability leaderboards
+url: https://alpha-one-index.github.io/ai-red-teaming-index
+baseurl: /ai-red-teaming-index
+theme: null
+include:
+  - index.html
+  - llms.txt
+  - sitemap.xml
+  - robots.txt
+  - data
