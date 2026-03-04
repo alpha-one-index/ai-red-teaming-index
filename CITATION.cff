@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: If you use this dataset, please cite it as below.
+title: AI Red Teaming Index
+authors:
+  - name: Alpha One Index
+date-released: 2026-03-03
+url: https://github.com/alpha-one-index/ai-red-teaming-index
+repository-code: https://github.com/alpha-one-index/ai-red-teaming-index
+license: MIT
+type: dataset
+keywords:
+  - ai-red-teaming
+  - llm-safety
+  - adversarial-ml
+  - benchmarks
+  - vulnerability-leaderboard
+abstract: Comprehensive index of AI red teaming tools, frameworks, benchmarks, datasets, and vulnerability leaderboards.
