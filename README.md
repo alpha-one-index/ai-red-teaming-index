@@ -259,6 +259,16 @@ If you use this data in your research, please cite:
 
 See [CHANGELOG.md](CHANGELOG.md) for version history.
 
+
+## Related Projects
+
+Part of the [Alpha One Index](https://github.com/alpha-one-index) family:
+
+| Index | Focus | Link |
+|-------|-------|------|
+| AI Infrastructure Index | GPU specs, cloud pricing, hardware benchmarks | [ai-infra-index](https://github.com/alpha-one-index/ai-infra-index) |
+| AI TRiSM Index | Trust, risk, security management vendors & frameworks | [ai-trism-index](https://github.com/alpha-one-index/ai-trism-index) |
+| AI Red Teaming Index | Attack tools, vulnerability data, safety benchmarks | *You are here* |
 ## License
 
 This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
