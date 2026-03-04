@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "title": "AI Red Teaming Compliance Mappings",
+    "version": "1.0.0",
+    "last_updated": "2026-03-04",
+    "description": "Maps red teaming activities to major AI safety and security compliance frameworks"
+  },
+  "frameworks": [
+    {
+      "id": "OWASP-LLM-TOP10",
+      "name": "OWASP LLM Top 10 (2025)",
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+      "version": "2.0",
+      "controls": [
+        {"id": "LLM01", "name": "Prompt Injection", "red_team_tests": ["PROMPT-INJ-001", "PROMPT-INJ-002", "PROMPT-INJ-003"], "tools": ["PyRIT", "Giskard", "promptfoo"]},
+        {"id": "LLM02", "name": "Insecure Output Handling", "red_team_tests": ["HALLUC-001", "HALLUC-002"], "tools": ["DeepTeam", "Giskard"]},
+        {"id": "LLM03", "name": "Training Data Poisoning", "red_team_tests": ["DATA-EXFIL-003"], "tools": ["ART", "TextAttack"]},
+        {"id": "LLM04", "name": "Model Denial of Service", "red_team_tests": [], "tools": ["PyRIT"]},
+        {"id": "LLM05", "name": "Supply Chain Vulnerabilities", "red_team_tests": [], "tools": []},
+        {"id": "LLM06", "name": "Sensitive Information Disclosure", "red_team_tests": ["DATA-EXFIL-001", "DATA-EXFIL-002", "DATA-EXFIL-004"], "tools": ["PyRIT", "Giskard", "promptfoo"]},
+        {"id": "LLM07", "name": "Insecure Plugin Design", "red_team_tests": ["AGENT-ABUSE-001", "AGENT-ABUSE-002"], "tools": ["PyRIT"]},
+        {"id": "LLM08", "name": "Excessive Agency", "red_team_tests": ["AGENT-ABUSE-001", "AGENT-ABUSE-003"], "tools": ["PyRIT", "DeepTeam"]},
+        {"id": "LLM09", "name": "Overreliance", "red_team_tests": ["HALLUC-001", "HALLUC-003", "BIAS-FAIR-001"], "tools": ["Giskard", "DeepTeam"]},
+        {"id": "LLM10", "name": "Model Theft", "red_team_tests": [], "tools": ["ART"]}
+      ]
+    },
+    {
+      "id": "MITRE-ATLAS",
+      "name": "MITRE ATLAS",
+      "url": "https://atlas.mitre.org/",
+      "version": "4.0",
+      "controls": [
+        {"id": "AML.T0051", "name": "LLM Prompt Injection", "red_team_tests": ["PROMPT-INJ-001", "PROMPT-INJ-002", "PROMPT-INJ-003"]},
+        {"id": "AML.T0054", "name": "LLM Jailbreak", "red_team_tests": ["JAILBREAK-001", "JAILBREAK-002", "JAILBREAK-003", "JAILBREAK-004", "JAILBREAK-005", "JAILBREAK-006"]},
+        {"id": "AML.T0024", "name": "Exfiltration via ML Inference API", "red_team_tests": ["DATA-EXFIL-001", "DATA-EXFIL-003"]},
+        {"id": "AML.T0048", "name": "Adversarial Input (Multimodal)", "red_team_tests": ["MULTIMODAL-001", "MULTIMODAL-002", "MULTIMODAL-003"]},
+        {"id": "AML.T0052", "name": "Phishing via AI", "red_team_tests": ["AGENT-ABUSE-001"]}
+      ]
+    },
+    {
+      "id": "NIST-AI-RMF",
+      "name": "NIST AI Risk Management Framework",
+      "url": "https://www.nist.gov/artificial-intelligence/ai-risk-management-framework",
+      "version": "AI 600-1",
+      "controls": [
+        {"id": "GOVERN", "name": "Govern", "relevant_tests": "All categories - governance of red teaming programs"},
+        {"id": "MAP-2.3", "name": "Scientific integrity of AI", "relevant_tests": "HALLUC-001, HALLUC-002, HALLUC-003"},
+        {"id": "MEASURE-2.6", "name": "Bias testing", "relevant_tests": "BIAS-FAIR-001, BIAS-FAIR-002, BIAS-FAIR-003"},
+        {"id": "MEASURE-2.7", "name": "Safety and security", "relevant_tests": "PROMPT-INJ, JAILBREAK, TOXIC, AGENT-ABUSE"},
+        {"id": "MANAGE-2.4", "name": "Risk treatment", "relevant_tests": "All categories - risk mitigation validation"}
+      ]
+    },
+    {
+      "id": "EU-AI-ACT",
+      "name": "EU AI Act",
+      "url": "https://artificialintelligenceact.eu/",
+      "version": "2024",
+      "controls": [
+        {"id": "Art-9", "name": "Risk Management System", "relevant_tests": "All attack categories"},
+        {"id": "Art-10", "name": "Data Governance", "relevant_tests": "DATA-EXFIL, BIAS-FAIR"},
+        {"id": "Art-15", "name": "Accuracy, Robustness, Cybersecurity", "relevant_tests": "PROMPT-INJ, JAILBREAK, MULTIMODAL"},
+        {"id": "Art-52", "name": "Transparency for GPAI", "relevant_tests": "HALLUC, DATA-EXFIL-002"}
+      ]
+    },
+    {
+      "id": "ISO-42001",
+      "name": "ISO/IEC 42001 AI Management System",
+      "url": "https://www.iso.org/standard/81230.html",
+      "version": "2023",
+      "controls": [
+        {"id": "A.6.2", "name": "AI risk assessment", "relevant_tests": "All attack categories"},
+        {"id": "A.8.4", "name": "Data quality for ML", "relevant_tests": "BIAS-FAIR, DATA-EXFIL"},
+        {"id": "A.9.3", "name": "AI system security", "relevant_tests": "PROMPT-INJ, JAILBREAK, AGENT-ABUSE"}
+      ]
+    }
+  ],
+  "total_frameworks": 5,
+  "total_controls_mapped": 32
+}
