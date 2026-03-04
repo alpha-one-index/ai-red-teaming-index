@@ -1,0 +1,333 @@
+{
+  "metadata": {
+    "title": "Vendor Attack Coverage Matrix",
+    "description": "Maps red teaming tools to the attack classes they cover, sourced to vendor documentation",
+    "version": "1.0.0",
+    "last_updated": "2026-03-04",
+    "assessed_by": "Alpha One Index",
+    "methodology": "Coverage assessed by reviewing vendor documentation, GitHub repos, published blogs, and release notes. Each claim links to a source URL."
+  },
+  "attack_classes": [
+    "PROMPT-INJ",
+    "JAILBREAK",
+    "DATA-POISON",
+    "MODEL-EXTRACT",
+    "MEMBERSHIP-INF",
+    "MULTIMODAL",
+    "AGENTIC",
+    "EVASION",
+    "SUPPLY-CHAIN"
+  ],
+  "vendors": [
+    {
+      "name": "PyRIT",
+      "version_assessed": "0.5.x",
+      "organization": "Microsoft",
+      "github_url": "https://github.com/Azure/PyRIT",
+      "coverage": {
+        "PROMPT-INJ": {
+          "supported": true,
+          "subtypes": ["direct", "indirect"],
+          "source_url": "https://github.com/Azure/PyRIT/blob/main/doc/code/orchestrators/1_prompt_sending_orchestrator.ipynb",
+          "notes": "Built-in prompt injection orchestrator with multi-turn support"
+        },
+        "JAILBREAK": {
+          "supported": true,
+          "subtypes": ["role-play", "encoding", "multi-turn", "crescendo", "PAIR"],
+          "source_url": "https://github.com/Azure/PyRIT/blob/main/doc/code/orchestrators/5_crescendo_orchestrator.ipynb",
+          "notes": "Crescendo, PAIR, and tree-of-attacks strategies built in"
+        },
+        "DATA-POISON": {
+          "supported": false,
+          "notes": "No data poisoning detection or simulation probes"
+        },
+        "MODEL-EXTRACT": {
+          "supported": false,
+          "notes": "Not designed for model extraction attacks"
+        },
+        "MEMBERSHIP-INF": {
+          "supported": false,
+          "notes": "No membership inference capabilities"
+        },
+        "MULTIMODAL": {
+          "supported": true,
+          "subtypes": ["image"],
+          "source_url": "https://github.com/Azure/PyRIT/blob/main/doc/code/converters/4_image_converters.ipynb",
+          "notes": "Image-based prompt injection via converters"
+        },
+        "AGENTIC": {
+          "supported": false,
+          "notes": "No dedicated agentic AI attack probes as of v0.5"
+        },
+        "EVASION": {
+          "supported": true,
+          "subtypes": ["encoding", "token-smuggling"],
+          "source_url": "https://github.com/Azure/PyRIT/blob/main/doc/code/converters/",
+          "notes": "Base64, ROT13, Unicode converters for evasion"
+        },
+        "SUPPLY-CHAIN": {
+          "supported": false,
+          "notes": "Not in scope"
+        }
+      }
+    },
+    {
+      "name": "Giskard",
+      "version_assessed": "2.x",
+      "organization": "Giskard AI",
+      "github_url": "https://github.com/Giskard-AI/giskard",
+      "coverage": {
+        "PROMPT-INJ": {
+          "supported": true,
+          "subtypes": ["direct", "indirect"],
+          "source_url": "https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html",
+          "notes": "Injection detection via LLM scan probes"
+        },
+        "JAILBREAK": {
+          "supported": true,
+          "subtypes": ["role-play", "crescendo", "multi-turn"],
+          "source_url": "https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html",
+          "notes": "50+ specialized probes including Crescendo and GOAT strategies"
+        },
+        "DATA-POISON": {
+          "supported": false,
+          "notes": "Focus is on runtime testing, not training pipeline"
+        },
+        "MODEL-EXTRACT": {
+          "supported": false,
+          "notes": "Not in scope for Giskard"
+        },
+        "MEMBERSHIP-INF": {
+          "supported": false,
+          "notes": "No membership inference probes"
+        },
+        "MULTIMODAL": {
+          "supported": false,
+          "notes": "Text-only as of v2.x"
+        },
+        "AGENTIC": {
+          "supported": true,
+          "subtypes": ["tool-misuse"],
+          "source_url": "https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html",
+          "notes": "RAG agent testing with tool-use validation"
+        },
+        "EVASION": {
+          "supported": true,
+          "subtypes": ["encoding"],
+          "source_url": "https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html",
+          "notes": "Built-in evasion detection probes"
+        },
+        "SUPPLY-CHAIN": {
+          "supported": false,
+          "notes": "Not in scope"
+        }
+      }
+    },
+    {
+      "name": "DeepTeam",
+      "version_assessed": "1.x",
+      "organization": "Confident AI",
+      "github_url": "https://github.com/confident-ai/deepteam",
+      "coverage": {
+        "PROMPT-INJ": {
+          "supported": true,
+          "subtypes": ["direct", "indirect"],
+          "source_url": "https://github.com/confident-ai/deepteam#vulnerabilities",
+          "notes": "Prompt injection vulnerability scanner"
+        },
+        "JAILBREAK": {
+          "supported": true,
+          "subtypes": ["role-play", "multi-turn"],
+          "source_url": "https://github.com/confident-ai/deepteam#vulnerabilities",
+          "notes": "Jailbreak detection and red teaming probes"
+        },
+        "DATA-POISON": {
+          "supported": false,
+          "notes": "Runtime focus only"
+        },
+        "MODEL-EXTRACT": {
+          "supported": false,
+          "notes": "Not in scope"
+        },
+        "MEMBERSHIP-INF": {
+          "supported": false,
+          "notes": "No membership inference capabilities"
+        },
+        "MULTIMODAL": {
+          "supported": false,
+          "notes": "Text-only as of v1.x"
+        },
+        "AGENTIC": {
+          "supported": false,
+          "notes": "No agentic-specific attack probes"
+        },
+        "EVASION": {
+          "supported": true,
+          "subtypes": ["encoding"],
+          "source_url": "https://github.com/confident-ai/deepteam#vulnerabilities",
+          "notes": "Filter bypass detection"
+        },
+        "SUPPLY-CHAIN": {
+          "supported": false,
+          "notes": "Not in scope"
+        }
+      }
+    },
+    {
+      "name": "Adversarial Robustness Toolbox",
+      "version_assessed": "1.17.x",
+      "organization": "IBM/Trusted AI",
+      "github_url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox",
+      "coverage": {
+        "PROMPT-INJ": {
+          "supported": false,
+          "notes": "Focus is on traditional ML, not LLM prompt attacks"
+        },
+        "JAILBREAK": {
+          "supported": false,
+          "notes": "Not designed for LLM jailbreaking"
+        },
+        "DATA-POISON": {
+          "supported": true,
+          "subtypes": ["training-data", "backdoor", "detection-evasion"],
+          "source_url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox/wiki/ART-Attacks#poisoning",
+          "notes": "Comprehensive poisoning attacks: clean-label, backdoor, gradient-based"
+        },
+        "MODEL-EXTRACT": {
+          "supported": true,
+          "subtypes": ["api-query", "distillation"],
+          "source_url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox/wiki/ART-Attacks#extraction",
+          "notes": "CopycatCNN, KnockoffNets extraction attacks"
+        },
+        "MEMBERSHIP-INF": {
+          "supported": true,
+          "subtypes": ["shadow-model", "attribute-inference"],
+          "source_url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox/wiki/ART-Attacks#inference",
+          "notes": "MembershipInferenceBlackBox, AttributeInference attacks"
+        },
+        "MULTIMODAL": {
+          "supported": true,
+          "subtypes": ["adversarial-image", "audio"],
+          "source_url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox/wiki/ART-Attacks#evasion",
+          "notes": "Image and audio adversarial perturbation attacks"
+        },
+        "AGENTIC": {
+          "supported": false,
+          "notes": "Traditional ML focus, no agentic AI support"
+        },
+        "EVASION": {
+          "supported": true,
+          "subtypes": ["adversarial-suffixes", "perturbation"],
+          "source_url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox/wiki/ART-Attacks#evasion",
+          "notes": "50+ evasion attacks: PGD, FGSM, C&W, DeepFool, etc."
+        },
+        "SUPPLY-CHAIN": {
+          "supported": false,
+          "notes": "Not in scope"
+        }
+      }
+    },
+    {
+      "name": "Garak",
+      "version_assessed": "0.9.x",
+      "organization": "NVIDIA",
+      "github_url": "https://github.com/NVIDIA/garak",
+      "coverage": {
+        "PROMPT-INJ": {
+          "supported": true,
+          "subtypes": ["direct", "indirect"],
+          "source_url": "https://github.com/NVIDIA/garak/tree/main/garak/probes",
+          "notes": "Prompt injection probes in probes module"
+        },
+        "JAILBREAK": {
+          "supported": true,
+          "subtypes": ["role-play", "encoding", "multi-turn"],
+          "source_url": "https://github.com/NVIDIA/garak/tree/main/garak/probes",
+          "notes": "DAN, encoding, and persona-based jailbreak probes"
+        },
+        "DATA-POISON": {
+          "supported": false,
+          "notes": "Runtime probe scanner, not training pipeline"
+        },
+        "MODEL-EXTRACT": {
+          "supported": false,
+          "notes": "Not in scope"
+        },
+        "MEMBERSHIP-INF": {
+          "supported": false,
+          "notes": "No membership inference probes"
+        },
+        "MULTIMODAL": {
+          "supported": false,
+          "notes": "Text-only probe scanning as of v0.9"
+        },
+        "AGENTIC": {
+          "supported": false,
+          "notes": "No agentic-specific probes"
+        },
+        "EVASION": {
+          "supported": true,
+          "subtypes": ["encoding", "token-smuggling"],
+          "source_url": "https://github.com/NVIDIA/garak/tree/main/garak/probes",
+          "notes": "Encoding and obfuscation probes"
+        },
+        "SUPPLY-CHAIN": {
+          "supported": false,
+          "notes": "Not in scope"
+        }
+      }
+    },
+    {
+      "name": "Promptfoo",
+      "version_assessed": "0.90.x",
+      "organization": "Promptfoo",
+      "github_url": "https://github.com/promptfoo/promptfoo",
+      "coverage": {
+        "PROMPT-INJ": {
+          "supported": true,
+          "subtypes": ["direct", "indirect"],
+          "source_url": "https://www.promptfoo.dev/docs/red-team/plugins/",
+          "notes": "Prompt injection plugin with adaptive attacks"
+        },
+        "JAILBREAK": {
+          "supported": true,
+          "subtypes": ["role-play", "encoding", "multi-turn", "crescendo"],
+          "source_url": "https://www.promptfoo.dev/docs/red-team/strategies/",
+          "notes": "Crescendo, GOAT, multi-turn jailbreak strategies"
+        },
+        "DATA-POISON": {
+          "supported": false,
+          "notes": "Eval and red-team focus, not training pipeline"
+        },
+        "MODEL-EXTRACT": {
+          "supported": false,
+          "notes": "Not in scope"
+        },
+        "MEMBERSHIP-INF": {
+          "supported": false,
+          "notes": "No membership inference capabilities"
+        },
+        "MULTIMODAL": {
+          "supported": false,
+          "notes": "Text-focused as of v0.90"
+        },
+        "AGENTIC": {
+          "supported": true,
+          "subtypes": ["tool-misuse"],
+          "source_url": "https://www.promptfoo.dev/docs/red-team/plugins/",
+          "notes": "MCP tool testing and agent tracing capabilities"
+        },
+        "EVASION": {
+          "supported": true,
+          "subtypes": ["encoding"],
+          "source_url": "https://www.promptfoo.dev/docs/red-team/strategies/",
+          "notes": "Encoding and obfuscation strategies"
+        },
+        "SUPPLY-CHAIN": {
+          "supported": false,
+          "notes": "Not in scope"
+        }
+      }
+    }
+  ]
+}
