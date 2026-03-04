@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alpha-one-index.github.io/ai-red-teaming-index/sitemap.xml
