@@ -1,0 +1,122 @@
+[
+  {
+    "name": "PyRIT",
+    "organization": "Microsoft",
+    "github_url": "https://github.com/Azure/PyRIT",
+    "stars": 2800,
+    "language": "Python",
+    "probes": 40,
+    "license": "MIT",
+    "category": "Red Teaming Framework",
+    "description": "Python Risk Identification Toolkit for generative AI",
+    "last_updated": "2026-03-01"
+  },
+  {
+    "name": "Giskard",
+    "organization": "Giskard AI",
+    "github_url": "https://github.com/Giskard-AI/giskard",
+    "stars": 4200,
+    "language": "Python",
+    "probes": 50,
+    "license": "Apache-2.0",
+    "category": "Testing Framework",
+    "description": "Open-source testing framework for ML models",
+    "last_updated": "2026-03-01"
+  },
+  {
+    "name": "DeepTeam",
+    "organization": "Confident AI",
+    "github_url": "https://github.com/confident-ai/deepteam",
+    "stars": 1500,
+    "language": "Python",
+    "probes": 40,
+    "license": "Apache-2.0",
+    "category": "Red Teaming Framework",
+    "description": "LLM red teaming framework with vulnerability scanning",
+    "last_updated": "2026-03-01"
+  },
+  {
+    "name": "Adversarial Robustness Toolbox",
+    "organization": "IBM/Trusted AI",
+    "github_url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox",
+    "stars": 4800,
+    "language": "Python",
+    "probes": 30,
+    "license": "MIT",
+    "category": "Adversarial ML",
+    "description": "Library for ML security with adversarial attacks and defenses",
+    "last_updated": "2026-03-01"
+  },
+  {
+    "name": "Counterfit",
+    "organization": "Microsoft",
+    "github_url": "https://github.com/Azure/counterfit",
+    "stars": 800,
+    "language": "Python",
+    "probes": 20,
+    "license": "MIT",
+    "category": "Adversarial ML",
+    "description": "CLI tool for assessing ML model security",
+    "last_updated": "2026-03-01"
+  },
+  {
+    "name": "TextAttack",
+    "organization": "QData",
+    "github_url": "https://github.com/QData/TextAttack",
+    "stars": 2900,
+    "language": "Python",
+    "probes": 25,
+    "license": "MIT",
+    "category": "NLP Attacks",
+    "description": "Framework for adversarial attacks on NLP models",
+    "last_updated": "2026-03-01"
+  },
+  {
+    "name": "Guardrails AI",
+    "organization": "Guardrails",
+    "github_url": "https://github.com/guardrails-ai/guardrails",
+    "stars": 4000,
+    "language": "Python",
+    "probes": 35,
+    "license": "Apache-2.0",
+    "category": "Guardrails",
+    "description": "Adding guardrails to LLM applications",
+    "last_updated": "2026-03-01"
+  },
+  {
+    "name": "NeMo Guardrails",
+    "organization": "NVIDIA",
+    "github_url": "https://github.com/NVIDIA/NeMo-Guardrails",
+    "stars": 4500,
+    "language": "Python",
+    "probes": 30,
+    "license": "Apache-2.0",
+    "category": "Guardrails",
+    "description": "Toolkit for adding programmable guardrails to LLM apps",
+    "last_updated": "2026-03-01"
+  },
+  {
+    "name": "LLM Guard",
+    "organization": "Protect AI",
+    "github_url": "https://github.com/protectai/llm-guard",
+    "stars": 1200,
+    "language": "Python",
+    "probes": 28,
+    "license": "MIT",
+    "category": "Guardrails",
+    "description": "Security toolkit for LLM interactions",
+    "last_updated": "2026-03-01"
+  },
+  {
+    "name": "Rebuff",
+    "organization": "Protect AI",
+    "github_url": "https://github.com/protectai/rebuff",
+    "stars": 800,
+    "language": "Python",
+    "probes": 15,
+    "license": "Apache-2.0",
+    "category": "Prompt Injection Detection",
+    "description": "Self-hardening prompt injection detector",
+    "last_updated": "2026-03-01"
+  }
+]
