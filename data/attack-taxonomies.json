@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "title": "AI Red Teaming Attack Taxonomy",
+    "version": "1.0.0",
+    "last_updated": "2026-03-04",
+    "source_frameworks": ["OWASP LLM Top 10", "MITRE ATLAS", "NIST AI RMF", "CSA AI Safety"]
+  },
+  "attack_categories": [
+    {
+      "id": "PROMPT-INJ",
+      "name": "Prompt Injection",
+      "framework_refs": ["OWASP-LLM01", "ATLAS-AML.T0051"],
+      "severity": "critical",
+      "subtypes": [
+        {"id": "PROMPT-INJ-001", "name": "Direct Prompt Injection", "description": "Attacker directly manipulates LLM input to override system instructions"},
+        {"id": "PROMPT-INJ-002", "name": "Indirect Prompt Injection", "description": "Malicious instructions embedded in external data sources consumed by LLM"},
+        {"id": "PROMPT-INJ-003", "name": "Stored Prompt Injection", "description": "Persistent injection via databases or documents retrieved by RAG pipelines"}
+      ]
+    },
+    {
+      "id": "JAILBREAK",
+      "name": "Jailbreak Attacks",
+      "framework_refs": ["OWASP-LLM01", "ATLAS-AML.T0054"],
+      "severity": "critical",
+      "subtypes": [
+        {"id": "JAILBREAK-001", "name": "Role-Play Jailbreak", "description": "Persuading model to adopt unrestricted persona (DAN, AIM)"},
+        {"id": "JAILBREAK-002", "name": "Crescendo Attack", "description": "Multi-turn gradual escalation to bypass safety filters"},
+        {"id": "JAILBREAK-003", "name": "PAIR Attack", "description": "Prompt Automatic Iterative Refinement using attacker LLM"},
+        {"id": "JAILBREAK-004", "name": "Many-Shot Jailbreak", "description": "Exploiting long context windows with many examples of undesired behavior"},
+        {"id": "JAILBREAK-005", "name": "Tree-of-Attacks", "description": "Branching attack strategies with pruning for optimal jailbreak paths"},
+        {"id": "JAILBREAK-006", "name": "Cipher/Encoding", "description": "Using Base64, ROT13, or custom ciphers to obfuscate harmful requests"}
+      ]
+    },
+    {
+      "id": "DATA-EXFIL",
+      "name": "Data Exfiltration",
+      "framework_refs": ["OWASP-LLM06", "ATLAS-AML.T0024"],
+      "severity": "high",
+      "subtypes": [
+        {"id": "DATA-EXFIL-001", "name": "PII Extraction", "description": "Extracting personally identifiable information from model training data"},
+        {"id": "DATA-EXFIL-002", "name": "System Prompt Leakage", "description": "Techniques to reveal hidden system prompts and instructions"},
+        {"id": "DATA-EXFIL-003", "name": "Training Data Extraction", "description": "Recovering verbatim training data through targeted prompting"},
+        {"id": "DATA-EXFIL-004", "name": "RAG Poisoning Exfiltration", "description": "Manipulating retrieval to expose private documents"}
+      ]
+    },
+    {
+      "id": "BIAS-FAIR",
+      "name": "Bias and Fairness Attacks",
+      "framework_refs": ["NIST-AI-600-1", "OWASP-LLM09"],
+      "severity": "high",
+      "subtypes": [
+        {"id": "BIAS-FAIR-001", "name": "Stereotyping Elicitation", "description": "Prompts designed to produce biased stereotypes about protected groups"},
+        {"id": "BIAS-FAIR-002", "name": "Demographic Disparity", "description": "Testing for unequal treatment across demographic attributes"},
+        {"id": "BIAS-FAIR-003", "name": "Representational Harm", "description": "Eliciting outputs that demean or erase specific populations"}
+      ]
+    },
+    {
+      "id": "HALLUC",
+      "name": "Hallucination Exploitation",
+      "framework_refs": ["OWASP-LLM02"],
+      "severity": "medium",
+      "subtypes": [
+        {"id": "HALLUC-001", "name": "Factual Hallucination Induction", "description": "Forcing model to generate confident but false factual claims"},
+        {"id": "HALLUC-002", "name": "Citation Fabrication", "description": "Inducing fake academic citations or legal references"},
+        {"id": "HALLUC-003", "name": "Entity Confusion", "description": "Exploiting model confusion between similar named entities"}
+      ]
+    },
+    {
+      "id": "TOXIC",
+      "name": "Toxicity Generation",
+      "framework_refs": ["OWASP-LLM01", "NIST-AI-600-1"],
+      "severity": "critical",
+      "subtypes": [
+        {"id": "TOXIC-001", "name": "Hate Speech Generation", "description": "Eliciting hateful or discriminatory language targeting groups"},
+        {"id": "TOXIC-002", "name": "Violence Incitement", "description": "Producing content that encourages or instructs harmful acts"},
+        {"id": "TOXIC-003", "name": "Self-Harm Content", "description": "Generating content related to self-harm or suicide methods"}
+      ]
+    },
+    {
+      "id": "AGENT-ABUSE",
+      "name": "Agent and Tool Abuse",
+      "framework_refs": ["OWASP-LLM07", "ATLAS-AML.T0052"],
+      "severity": "critical",
+      "subtypes": [
+        {"id": "AGENT-ABUSE-001", "name": "Unauthorized Tool Invocation", "description": "Manipulating agents to call tools or APIs beyond intended scope"},
+        {"id": "AGENT-ABUSE-002", "name": "Privilege Escalation", "description": "Gaining elevated permissions through agentic workflows"},
+        {"id": "AGENT-ABUSE-003", "name": "Chain-of-Command Hijacking", "description": "Redirecting multi-agent pipelines to execute attacker objectives"}
+      ]
+    },
+    {
+      "id": "MULTIMODAL",
+      "name": "Multimodal Attacks",
+      "framework_refs": ["ATLAS-AML.T0048"],
+      "severity": "high",
+      "subtypes": [
+        {"id": "MULTIMODAL-001", "name": "Adversarial Image Injection", "description": "Embedding text instructions in images to bypass text filters"},
+        {"id": "MULTIMODAL-002", "name": "Audio Prompt Injection", "description": "Hidden commands in audio inputs for speech-enabled models"},
+        {"id": "MULTIMODAL-003", "name": "Cross-Modal Transfer", "description": "Exploiting inconsistencies between vision and language understanding"}
+      ]
+    }
+  ],
+  "total_attack_types": 8,
+  "total_subtypes": 28
+}
