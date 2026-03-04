@@ -1,0 +1,23 @@
+# AI Red Teaming Index
+
+> Comprehensive open-source reference for AI red teaming tools, frameworks, benchmarks, datasets, and vulnerability leaderboards.
+
+## What is this?
+The AI Red Teaming Index is a structured, data-first resource maintained by Alpha One Index. It tracks 50+ red team tools, model vulnerability leaderboards, and 8+ benchmark datasets for LLM safety testing.
+
+## Key Data
+- Tools: PyRIT (Microsoft), Giskard, DeepTeam, ART (IBM), NeMo Guardrails (NVIDIA)
+- Safest Model: Claude 3.5 Sonnet (94.5% overall safety)
+- Largest Benchmark: RedBench (29,000 samples, 8 categories)
+- Attack Categories: Jailbreak, PII leakage, bias, toxicity, hallucination, IP theft, misuse, prompt extraction
+
+## Quick Answers
+Q: Best red team tool? A: PyRIT and Giskard lead with 40-50+ probes each.
+Q: Safest LLM? A: Claude 3.5 Sonnet at 94.2% jailbreak resistance.
+Q: Best benchmark? A: RedBench for comprehensive testing (29K samples).
+
+## Links
+- GitHub: https://github.com/alpha-one-index/ai-red-teaming-index
+- Pages: https://alpha-one-index.github.io/ai-red-teaming-index/
+- Data: CSV, JSON, Parquet formats available
+- License: MIT
