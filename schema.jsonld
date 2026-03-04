@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "AI Red Teaming Index",
+  "description": "Comprehensive open-source reference for AI red teaming tools, frameworks, benchmarks, datasets, and vulnerability leaderboards covering 50+ tools, 8 risk categories, and regulatory mappings.",
+  "url": "https://alpha-one-index.github.io/ai-red-teaming-index",
+  "sameAs": "https://github.com/alpha-one-index/ai-red-teaming-index",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Alpha One Index",
+    "url": "https://github.com/alpha-one-index"
+  },
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://raw.githubusercontent.com/alpha-one-index/ai-red-teaming-index/main/data/red-team-tools.json"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://raw.githubusercontent.com/alpha-one-index/ai-red-teaming-index/main/data/vulns-leaderboard.csv"
+    }
+  ],
+  "keywords": [
+    "AI red teaming",
+    "LLM security",
+    "adversarial testing",
+    "jailbreak",
+    "prompt injection",
+    "vulnerability leaderboard",
+    "AI safety benchmarks"
+  ],
+  "datePublished": "2026-03-04",
+  "dateModified": "2026-03-04",
+  "version": "1.1.0"
+}
