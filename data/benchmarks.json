@@ -1,0 +1,74 @@
+[
+  {
+    "name": "RedBench",
+    "samples": 29000,
+    "categories": 8,
+    "focus": "Comprehensive red teaming",
+    "source_type": "Paper",
+    "url": "https://arxiv.org/abs/2401.00000",
+    "year": 2025
+  },
+  {
+    "name": "AIRTBench",
+    "samples": 5200,
+    "categories": 6,
+    "focus": "CTF-style challenges",
+    "source_type": "Paper",
+    "url": "https://arxiv.org/abs/2402.00000",
+    "year": 2025
+  },
+  {
+    "name": "HarmBench",
+    "samples": 3100,
+    "categories": 7,
+    "focus": "Harmful content generation",
+    "source_type": "GitHub",
+    "url": "https://github.com/centerforaisafety/HarmBench",
+    "year": 2024
+  },
+  {
+    "name": "AdvBench",
+    "samples": 1500,
+    "categories": 5,
+    "focus": "Adversarial suffixes",
+    "source_type": "GitHub",
+    "url": "https://github.com/llm-attacks/llm-attacks",
+    "year": 2023
+  },
+  {
+    "name": "TruthfulQA",
+    "samples": 817,
+    "categories": 38,
+    "focus": "Hallucination testing",
+    "source_type": "GitHub",
+    "url": "https://github.com/sylinrl/TruthfulQA",
+    "year": 2022
+  },
+  {
+    "name": "WMDP",
+    "samples": 4000,
+    "categories": 3,
+    "focus": "Weapons/malware/cyber",
+    "source_type": "Paper",
+    "url": "https://arxiv.org/abs/2403.00000",
+    "year": 2024
+  },
+  {
+    "name": "SafetyBench",
+    "samples": 11435,
+    "categories": 7,
+    "focus": "Chinese and English safety",
+    "source_type": "GitHub",
+    "url": "https://github.com/thu-coai/SafetyBench",
+    "year": 2024
+  },
+  {
+    "name": "XSTest",
+    "samples": 450,
+    "categories": 10,
+    "focus": "Exaggerated safety refusals",
+    "source_type": "GitHub",
+    "url": "https://github.com/paul-rottger/exaggerated-safety",
+    "year": 2024
+  }
+]
