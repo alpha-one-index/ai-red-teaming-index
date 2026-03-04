@@ -2,6 +2,19 @@
 
 All notable changes to the AI Red Teaming Index will be documented in this file.
 
+## [1.1.0] - 2026-03-04
+
+### Added
+- Attack taxonomies with 8 categories and 28 subtypes mapped to OWASP/MITRE/NIST frameworks
+- Compliance mappings for 5 frameworks (OWASP LLM Top 10, MITRE ATLAS, NIST AI RMF, EU AI Act, ISO 42001)
+- Benchmark datasets index with 10 published research datasets (RedBench, ALERT, HarmBench, AdvBench, TrustLLM, JailbreakBench, SafetyBench, WildGuard, RobustBench, Healthcare RT)
+- GitHub Sponsors profile with 2 one-time tiers ($10, $50)
+- GitHub Pages site live at https://alpha-one-index.github.io/ai-red-teaming-index/
+
+### Changed
+- Data folder now contains 7 structured files (up from 3)
+- Total data coverage: 50+ tools, 28 attack types, 32 compliance controls, 10 benchmark datasets
+
 ## [1.0.0] - 2026-03-03
 
 ### Added
