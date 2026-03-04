@@ -31,6 +31,7 @@ Maintained by [Alpha One Index](https://github.com/alpha-one-index) -- An indepe
 - [Leaderboard Methodology & Sourcing](#leaderboard-methodology--sourcing)
 - [Benchmarks & Datasets](#benchmarks--datasets)
 - [Attack Vectors & Techniques](#attack-vectors--techniques)
+- [Vendor Attack Coverage Matrix](#vendor-attack-coverage-matrix)
 - [Quick Start](#quick-start)
 - [Data Format](#data-format)
 - [Methodology](#methodology)
@@ -170,6 +171,10 @@ Each model's scores are derived from the following published evaluations:
 | PII Leakage | Training data memorization | High | Deduplication, scrubbing |
 
 > See [specs/attack-vectors.md](specs/attack-vectors.md) for detailed analysis.
+
+## Vendor Attack Coverage Matrix
+
+> **Full specification:** [`specs/vendor-attack-coverage-matrix.md`](specs/vendor-attack-coverage-matrix.md) | **Structured data:** [`data/vendor-attack-coverage.json`](data/vendor-attack-coverage.json)
 
 ## Quick Start
 
