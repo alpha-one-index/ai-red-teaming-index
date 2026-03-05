@@ -273,7 +273,8 @@ Part of the [Alpha One Index](https://github.com/alpha-one-index) family:
 |-------|-------|------|
 | AI Infrastructure Index | GPU specs, cloud pricing, hardware benchmarks | [ai-infra-index](https://github.com/alpha-one-index/ai-infra-index) |
 | AI TRiSM Index | Trust, risk, security management vendors & frameworks | [ai-trism-index](https://github.com/alpha-one-index/ai-trism-index) |
-| AI LLMOps Index | LLM inference costs, failure modes, observability, compliance | [ai-llmops-index](https://github.com/alpha-one-index/ai-llmops-index) |
+| AI LLMOps Index | LLM inference costs, failure modes, observability, compliance | [ai-llmops-index]
+| AI AppSec Index | AI remediation benchmarks, ASPM, CRA compliance, false positives | [ai-appsec-index](https://github.com/alpha-one-index/ai-appsec-index) |
 | AI Red Teaming Index | Attack tools, vulnerability data, safety benchmarks | *You are here* |
 ## License
 
