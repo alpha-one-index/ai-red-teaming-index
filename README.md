@@ -3,14 +3,14 @@
 > A comprehensive open-source reference for AI red teaming tools, frameworks, benchmarks, datasets, and vulnerability leaderboards.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Data Updated](https://img.shields.io/badge/Data-Auto%20Updated%20Weekly-blue.svg)](#)
+[![Data Updated](https://img.shields.io/badge/Data-Auto%20Updated%20Weekly-blue.svg)](https://github.com/alpha-one-index/ai-red-teaming-index)
 [![Tools](https://img.shields.io/badge/Tools-50%2B-green.svg)](#red-team-tools)
 [![Version](https://img.shields.io/badge/Version-1.1.0-blue.svg)](#changelog)
 [![Validation](https://img.shields.io/badge/Validation-Self%20Auditing-brightgreen.svg)](#methodology)
 [![Croissant](https://img.shields.io/badge/Croissant-ML%20Metadata-orange.svg)](croissant.json)
 [![Provenance](https://img.shields.io/badge/Provenance-Documented-purple.svg)](provenance.md)
-[![HuggingFace Dataset](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace%20Dataset-yellow.svg)](#)
-[![Kaggle Dataset](https://img.shields.io/badge/%F0%9F%8F%86-Kaggle%20Dataset-blue.svg)](#)
+[![HuggingFace Dataset](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace%20Dataset-yellow.svg)](https://huggingface.co/datasets/alpha-one-index/ai-red-teaming-index)
+[![Kaggle Dataset](https://img.shields.io/badge/%F0%9F%8F%86-Kaggle%20Dataset-blue.svg)](https://www.kaggle.com/datasets/alphaoneindex/ai-red-teaming-index)
 
 Maintained by [Alpha One Index](https://github.com/alpha-one-index) -- An independent AI security research initiative providing verified, structured red teaming data for engineers, researchers, and security teams.
 
@@ -19,18 +19,18 @@ Maintained by [Alpha One Index](https://github.com/alpha-one-index) -- An indepe
 | Platform | Link | Description |
 |---|---|---|
 | GitHub Pages | [alpha-one-index.github.io/ai-red-teaming-index](https://alpha-one-index.github.io/ai-red-teaming-index) | Interactive dashboard with filtering and sorting |
-| HuggingFace | [datasets/alpha-one-index/ai-red-teaming-index](#) | ML-ready dataset with Croissant metadata |
-| Kaggle | [datasets/alphaoneindex/ai-red-teaming-index](#) | Kaggle dataset with notebooks |
+| HuggingFace | [datasets/alpha-one-index/ai-red-teaming-index](https://huggingface.co/datasets/alpha-one-index/ai-red-teaming-index) | ML-ready dataset with Croissant metadata |
+| Kaggle | [datasets/alphaoneindex/ai-red-teaming-index](https://www.kaggle.com/datasets/alphaoneindex/ai-red-teaming-index) | Kaggle dataset with notebooks |
 
 ## Table of Contents
 
-- [Overview](#overview)
+- [What Is the AI Red Teaming Index?](#what-is-the-ai-red-teaming-index)
 - [Regulatory Mandate Map](#regulatory-mandate-map)
-- [Red Team Tools & Frameworks](#red-team-tools--frameworks)
-- [Vulnerability Leaderboards](#vulnerability-leaderboards)
+- [What Are the Best AI Red Teaming Tools in 2026?](#what-are-the-best-ai-red-teaming-tools-in-2026)
+- [Which AI Models Are Most Vulnerable?](#which-ai-models-are-most-vulnerable)
 - [Leaderboard Methodology & Sourcing](#leaderboard-methodology--sourcing)
-- [Benchmarks & Datasets](#benchmarks--datasets)
-- [Attack Vectors & Techniques](#attack-vectors--techniques)
+- [What Are the Key AI Safety Benchmarks?](#what-are-the-key-ai-safety-benchmarks)
+- [What Are the Main AI Attack Vectors?](#what-are-the-main-ai-attack-vectors)
 - [Vendor Attack Coverage Matrix](#vendor-attack-coverage-matrix)
 - [Quick Start](#quick-start)
 - [Data Format](#data-format)
@@ -39,7 +39,7 @@ Maintained by [Alpha One Index](https://github.com/alpha-one-index) -- An indepe
 - [Citation](#citation)
 - [License](#license)
 
-## Overview
+## What Is the AI Red Teaming Index?
 
 The **AI Red Teaming Index** is a structured, data-first resource tracking the rapidly evolving landscape of AI/LLM security testing. As regulatory frameworks (NIST AI RMF, EU AI Act, UK AISI) increasingly mandate red teaming, this index provides the authoritative open reference for:
 
@@ -73,7 +73,7 @@ Three major regulatory frameworks now require or recommend AI red teaming. The m
 
 **Primary sources:** [EUR-Lex Reg. 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) | [DSIT/AISI Evaluation Protocol](https://www.gov.uk/government/publications/ai-safety-institute-approach-to-evaluations) | [NIST AI 100-1](https://airc.nist.gov/AI_RMF_Interactivity)
 
-## Red Team Tools & Frameworks
+## What Are the Best AI Red Teaming Tools in 2026?
 
 | Tool | Organization | Stars | Language | Probes | License | Link |
 |---|---|---|---|---|---|---|
@@ -90,7 +90,7 @@ Three major regulatory frameworks now require or recommend AI red teaming. The m
 
 > See [data/red-team-tools.json](data/red-team-tools.json) for the complete dataset with 50+ tools.
 
-## Vulnerability Leaderboards
+## Which AI Models Are Most Vulnerable?
 
 ### Model Safety Scores (Lower = More Vulnerable)
 
@@ -142,7 +142,7 @@ Each model's scores are derived from the following published evaluations:
 
 > **Reproducibility:** To reproduce these results, clone this repo and run the evaluation scripts in `data/eval/` (coming in v1.2.0). Until then, all raw evaluation outputs are archived in our [private source repository](https://github.com/alpha-one-index/ai-red-teaming-index-private) for audit upon request.
 
-## Benchmarks & Datasets
+## What Are the Key AI Safety Benchmarks?
 
 | Benchmark | Samples | Categories | Focus | Source |
 |---|---|---|---|---|
@@ -157,7 +157,7 @@ Each model's scores are derived from the following published evaluations:
 
 > See [data/benchmarks.json](data/benchmarks.json) for the complete dataset.
 
-## Attack Vectors & Techniques
+## What Are the Main AI Attack Vectors?
 
 | Category | Technique | Risk Level | Mitigation |
 |---|---|---|---|
