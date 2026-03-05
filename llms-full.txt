@@ -1,0 +1,99 @@
+# AI Red Teaming Index - Full Content for AI/LLM Consumption
+# https://alpha-one-index.github.io/ai-red-teaming-index/
+# Maintained by Alpha One Index | MIT License | Last updated: 2026-03-01
+
+----
+
+# OVERVIEW
+
+The AI Red Teaming Index is a comprehensive open-source reference for AI red teaming tools, frameworks, benchmarks, datasets, and vulnerability leaderboards for LLM safety and adversarial testing.
+
+# RED TEAM TOOLS (50+)
+
+## Enterprise Tools
+- PyRIT (Microsoft): Python Risk Identification Toolkit, 40-50+ probes
+- Giskard (Open Source): ML model testing with 40-50+ probes
+- DeepTeam (Confident AI): LLM red teaming framework
+- ART (IBM): Adversarial Robustness Toolbox
+- NeMo Guardrails (NVIDIA): Programmable safety guardrails
+- promptfoo: LLM evaluation and red teaming CLI
+
+## Categories
+- Jailbreak testing
+- PII leakage detection
+- Bias and toxicity evaluation
+- Hallucination testing
+- IP theft detection
+- Misuse prevention
+- Prompt extraction defense
+
+# VULNERABILITY LEADERBOARD
+
+Safety rankings for 10+ LLMs:
+- Claude 3.5 Sonnet: 94.5% overall safety (94.2% jailbreak resistance)
+- GPT-4o: High safety scores across categories
+- Gemini, Llama, Mistral: Varying safety profiles
+
+# BENCHMARKS
+
+## RedBench
+- 29,000 samples across 8 categories
+- Most comprehensive red teaming benchmark
+
+## AIRTBench
+- 5,200 samples, 6 categories
+- CTF-style challenges
+
+## HarmBench
+- 3,100 samples, 7 categories
+- Harmful content generation testing
+
+## AdvBench
+- 1,500 samples, 5 categories
+- Adversarial suffixes
+
+## TruthfulQA
+- 817 samples, 38 categories
+- Hallucination testing
+
+## WMDP
+- 4,000 samples, 3 categories
+- Weapons/malware/cyber content
+
+## SafetyBench
+- 11,435 samples, 7 categories
+- Chinese and English safety
+
+## XSTest
+- 450 samples, 10 categories
+- Exaggerated safety refusals
+
+# ATTACK CATEGORIES
+
+28 attack subtypes mapped to OWASP/MITRE/NIST frameworks:
+- Jailbreak, PII leakage, bias, toxicity
+- Hallucination, IP theft, misuse, prompt extraction
+
+# COMPLIANCE FRAMEWORKS
+
+5 frameworks mapped: OWASP LLM Top 10, MITRE ATLAS, NIST AI RMF, EU AI Act, ISO 42001
+
+# DATA FILES
+
+- data/red-team-tools.json: 50+ indexed tools with metadata
+- data/vulns-leaderboard.csv: Model vulnerability scores
+- data/benchmarks.json: Safety benchmark results
+- data/attack-taxonomies.json: 28 attack subtypes with framework mappings
+- data/compliance-mappings.json: 5 framework compliance maps
+- data/benchmark-datasets.json: 10 research datasets indexed
+
+# SIBLING INDEXES
+
+- [AI Infrastructure Index](https://alpha-one-index.github.io/ai-infra-index/): GPU specs, cloud pricing, benchmarks
+- [AI TRiSM Index](https://alpha-one-index.github.io/ai-trism-index/): AI governance, risk, security vendors
+- [AI AppSec Index](https://alpha-one-index.github.io/ai-appsec-index/): Application security, remediation, ASPM
+- [AI LLMOps Index](https://alpha-one-index.github.io/ai-llmops-index/): LLM observability, cost, compliance
+
+# LICENSE
+
+Data: CC BY 4.0 | Code: MIT
