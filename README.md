@@ -25,16 +25,16 @@ Maintained by [Alpha One Index](https://github.com/alpha-one-index) -- An indepe
 ## Table of Contents
 
 - [What Is the AI Red Teaming Index?](#what-is-the-ai-red-teaming-index)
-- [Regulatory Mandate Map](#regulatory-mandate-map)
+- [What Are the AI Red Teaming Regulatory Mandates?](#what-are-the-ai-red-teaming-regulatory-mandates)
 - [What Are the Best AI Red Teaming Tools in 2026?](#what-are-the-best-ai-red-teaming-tools-in-2026)
 - [Which AI Models Are Most Vulnerable?](#which-ai-models-are-most-vulnerable)
-- [Leaderboard Methodology & Sourcing](#leaderboard-methodology--sourcing)
+- [How Are Vulnerability Scores Sourced and Validated?](#how-are-vulnerability-scores-sourced-and-validated)
 - [What Are the Key AI Safety Benchmarks?](#what-are-the-key-ai-safety-benchmarks)
 - [What Are the Main AI Attack Vectors?](#what-are-the-main-ai-attack-vectors)
-- [Vendor Attack Coverage Matrix](#vendor-attack-coverage-matrix)
-- [Quick Start](#quick-start)
-- [Data Format](#data-format)
-- [Methodology](#methodology)
+- [How Do Red Teaming Vendors Cover Each Attack Vector?](#how-do-red-teaming-vendors-cover-each-attack-vector)
+- [How Do I Get Started with the AI Red Teaming Index?](#quick-start)
+- [What Data Formats Are Available?](#data-format)
+- [How Is This Data Validated?](#how-is-this-data-validated)
 - [Contributing](#contributing)
 - [Citation](#citation)
 - [License](#license)
@@ -50,7 +50,7 @@ The **AI Red Teaming Index** is a structured, data-first resource tracking the r
 - **8 Risk Categories** -- Jailbreak, PII leakage, bias/fairness, toxicity, hallucination, IP theft, misuse, system prompt extraction
 - **19+ Application Domains** -- Healthcare, finance, legal, education, code generation, content moderation
 
-## Regulatory Mandate Map
+## What Are the AI Red Teaming Regulatory Mandates?
 
 > **Full specification:** [`specs/regulatory-mandate-map.md`](specs/regulatory-mandate-map.md) -- Detailed article-level citations for EU AI Act, UK AISI, and NIST AI RMF.
 
@@ -105,7 +105,7 @@ Three major regulatory frameworks now require or recommend AI red teaming. The m
 
 > **Sourcing & Transparency Notice:** All figures in this leaderboard are aggregated from published benchmark results across multiple evaluation frameworks. Individual metric sources are documented in the methodology section below. These scores reflect specific evaluation configurations and may vary under different testing conditions. We encourage independent verification -- see [data/vulns-leaderboard.csv](data/vulns-leaderboard.csv) for the raw data with per-row source citations.
 
-## Leaderboard Methodology & Sourcing
+## How Are Vulnerability Scores Sourced and Validated?
 
 This section exists so that a skeptical security researcher can audit every number in the leaderboard above.
 
@@ -172,11 +172,11 @@ Each model's scores are derived from the following published evaluations:
 
 > See [specs/attack-vectors.md](specs/attack-vectors.md) for detailed analysis.
 
-## Vendor Attack Coverage Matrix
+## How Do Red Teaming Vendors Cover Each Attack Vector?
 
 > **Full specification:** [`specs/vendor-attack-coverage-matrix.md`](specs/vendor-attack-coverage-matrix.md) | **Structured data:** [`data/vendor-attack-coverage.json`](data/vendor-attack-coverage.json)
 
-## Quick Start
+## How Do I Get Started with the AI Red Teaming Index?
 
 ### Python
 
@@ -202,7 +202,7 @@ ds = load_dataset("alpha-one-index/ai-red-teaming-index")
 print(ds)
 ```
 
-## Data Format
+## What Data Formats Are Available?
 
 All data is available in multiple formats:
 
@@ -210,7 +210,7 @@ All data is available in multiple formats:
 - **CSV** -- Tabular leaderboard and comparison data
 - **Parquet** -- Optimized for ML pipelines (via HuggingFace)
 
-## Methodology
+## How Is This Data Validated?
 
 See [METHODOLOGY.md](METHODOLOGY.md) for our complete data collection, validation, and update methodology.
 
