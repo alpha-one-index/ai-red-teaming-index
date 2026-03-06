@@ -2,7 +2,13 @@
 
 All notable changes to the AI Red Teaming Index will be documented in this file.
 
-## [1.1.0] - 2026-03-04
+## 
+### Auto-Refresh -- 2026-03-06
+
+- Red team tools refreshed: 10 tools, 10 updated with latest GitHub stats
+- Data files refreshed via automated pipeline
+
+[1.1.0] - 2026-03-04
 
 ### Added
 - Attack taxonomies with 8 categories and 28 subtypes mapped to OWASP/MITRE/NIST frameworks
