@@ -3,7 +3,7 @@
 > A comprehensive open-source reference for AI red teaming tools, frameworks, benchmarks, datasets, and vulnerability leaderboards.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Data Updated](https://img.shields.io/badge/Data-Auto%20Updated%20Weekly-blue.svg)](https://github.com/alpha-one-index/ai-red-teaming-index)
+[![Data Updated](https://img.shields.io/badge/Data-Updated%202026-03-06-blue.svg)](https://github.com/alpha-one-index/ai-red-teaming-index)
 [![Tools](https://img.shields.io/badge/Tools-50%2B-green.svg)](#red-team-tools)
 [![Version](https://img.shields.io/badge/Version-1.1.0-blue.svg)](#changelog)
 [![Validation](https://img.shields.io/badge/Validation-Self%20Auditing-brightgreen.svg)](#methodology)
