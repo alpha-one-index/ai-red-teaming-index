@@ -73,6 +73,9 @@ jobs:
           sed -i "s/Data Updated-[0-9\-]*/Data Updated-${DATE}/g" README.md
           sed -i "s/Data-Auto%20Updated%20Weekly-blue/Data-Updated%20${DATE}-blue/g" README.md
 
+      - name: Update CHANGELOG with data refresh entry
+        run: python scripts/update_changelog.py
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
@@ -81,6 +84,11 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore(data): weekly refresh - $(date -u +%Y-%m-%d)"
+            git commit -m "chore(data): weekly refresh - $(date -u +%Y-%m-%d)
+
+          - Red team tools stats updated
+          - CHANGELOG.md updated
+
+          [skip ci]"
             git push
           fi
