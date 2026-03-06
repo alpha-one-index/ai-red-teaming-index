@@ -1,0 +1,86 @@
+name: Weekly Data Refresh
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Refresh red-team-tools.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PYEOF'
+          import json, os, requests, datetime
+
+          token = os.environ.get("GITHUB_TOKEN", "")
+          headers = {"Authorization": f"token {token}"} if token else {}
+          today = datetime.date.today().isoformat()
+
+          with open("data/red-team-tools.json", "r") as f:
+              tools = json.load(f)
+
+          for tool in tools:
+              url = tool.get("github_url", "")
+              if "github.com" not in url:
+                  continue
+              parts = url.rstrip("/").split("/")
+              if len(parts) < 2:
+                  continue
+              owner, repo = parts[-2], parts[-1]
+              api_url = f"https://api.github.com/repos/{owner}/{repo}"
+              try:
+                  r = requests.get(api_url, headers=headers, timeout=15)
+                  if r.status_code == 200:
+                      data = r.json()
+                      tool["stars"] = data.get("stargazers_count", tool.get("stars", 0))
+                      tool["forks"] = data.get("forks_count", 0)
+                      tool["open_issues"] = data.get("open_issues_count", 0)
+                      tool["last_pushed"] = data.get("pushed_at", "")
+                      tool["last_updated"] = today
+                      print(f"Updated {owner}/{repo}: {tool['stars']} stars")
+                  else:
+                      print(f"Skipped {owner}/{repo}: HTTP {r.status_code}")
+              except Exception as e:
+                  print(f"Error {owner}/{repo}: {e}")
+
+          with open("data/red-team-tools.json", "w") as f:
+              json.dump(tools, f, indent=2)
+
+          print(f"Refresh complete: {len(tools)} tools processed on {today}")
+          PYEOF
+
+      - name: Update freshness badge in README
+        run: |
+          DATE=$(date -u +"%Y-%m-%d")
+          sed -i "s/Data Updated-[0-9\-]*/Data Updated-${DATE}/g" README.md
+          sed -i "s/Data-Auto%20Updated%20Weekly-blue/Data-Updated%20${DATE}-blue/g" README.md
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(data): weekly refresh - $(date -u +%Y-%m-%d)"
+            git push
+          fi
