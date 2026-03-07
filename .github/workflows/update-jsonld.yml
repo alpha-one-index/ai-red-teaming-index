@@ -1,0 +1,28 @@
+name: Update JSON-LD
+on:
+  workflow_dispatch:
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace JSON-LD
+        run: |
+          python3 << 'SCRIPT'
+          import re
+          with open('index.html', 'r') as f:
+              content = f.read()
+          new_jsonld = '{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"AI Red Teaming Index","url":"https://alpha-one-index.github.io/ai-red-teaming-index/","publisher":{"@id":"#org"}},{"@type":"Organization","@id":"#org","name":"Alpha One Index","url":"https://github.com/alpha-one-index","sameAs":["https://huggingface.co/alpha-one-index","https://www.kaggle.com/alphaoneindex"]},{"@type":"Dataset","name":"AI Red Teaming Index","description":"Comprehensive index of AI red teaming tools, adversarial testing frameworks, LLM jailbreak benchmarks, and model safety evaluation datasets.","url":"https://github.com/alpha-one-index/ai-red-teaming-index","license":"https://opensource.org/licenses/MIT","dateModified":"2026-03-06","creator":{"@id":"#org"},"keywords":["AI red teaming","adversarial AI","LLM safety","jailbreak benchmarks","model evaluation"],"distribution":{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://raw.githubusercontent.com/alpha-one-index/ai-red-teaming-index/main/data/ai_red_teaming_tools.csv"},"variableMeasured":["tool_name","attack_category","benchmark_type","model_coverage","dataset_size"],"measurementTechnique":"Manual research and adversarial testing documentation review"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is AI red teaming?","acceptedAnswer":{"@type":"Answer","text":"AI red teaming involves systematically testing AI models for vulnerabilities, biases, and safety issues using adversarial techniques and jailbreak benchmarks."}},{"@type":"Question","name":"How many tools are tracked?","acceptedAnswer":{"@type":"Answer","text":"The AI Red Teaming Index tracks 50+ tools across 9 attack categories."}},{"@type":"Question","name":"What benchmarks are included?","acceptedAnswer":{"@type":"Answer","text":"30+ benchmark datasets for prompt injection, jailbreaking, and model safety evaluation."}},{"@type":"Question","name":"How often is it updated?","acceptedAnswer":{"@type":"Answer","text":"The AI Red Teaming Index is updated weekly."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes, MIT licensed and free for security research and model evaluation."}}]}]}'
+          content = re.sub(r'(?<=<script type="application/ld.json">\n).*?(?=\n</script>)', new_jsonld, content, flags=re.DOTALL)
+          with open('index.html', 'w') as f:
+              f.write(content)
+          SCRIPT
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "fix: upgrade JSON-LD with @graph, FAQPage, distribution, dateModified"
+          git push
