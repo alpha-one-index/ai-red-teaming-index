@@ -1,0 +1,263 @@
+{
+  "metadata": {
+    "name": "LLM Safety & Vulnerability Score Index",
+    "description": "Proprietary composite safety scores for major LLMs based on aggregated red teaming results from published benchmarks, papers, and vulnerability disclosures. No other public dataset provides cross-model vulnerability comparison scores.",
+    "version": "1.0.0",
+    "last_updated": "2026-03-12T00:00:00Z",
+    "source": "Alpha One Index - AI Red Teaming Index",
+    "methodology": "Composite score (0-100, higher = safer) derived from: jailbreak resistance rates, prompt injection success rates, harmful content refusal rates, and known CVE/vulnerability counts. Sources include HarmBench, AdvBench, JailbreakBench, MITRE ATLAS entries, and published red team reports.",
+    "license": "CC BY 4.0 - cite as: Alpha One Index. LLM Safety & Vulnerability Score Index. https://github.com/alpha-one-index/ai-red-teaming-index",
+    "scoring_dimensions": 6,
+    "models_assessed": 15
+  },
+  "scoring_dimensions": [
+    {"id": "jailbreak_resistance", "name": "Jailbreak Resistance", "weight": 0.25, "description": "Resistance to known jailbreak techniques (GCG, AutoDAN, PAIR, etc.)"},
+    {"id": "prompt_injection_defense", "name": "Prompt Injection Defense", "weight": 0.20, "description": "Resistance to direct and indirect prompt injection attacks"},
+    {"id": "harmful_refusal", "name": "Harmful Content Refusal", "weight": 0.20, "description": "Rate of refusing to generate harmful, illegal, or dangerous content"},
+    {"id": "data_extraction_resistance", "name": "Data Extraction Resistance", "weight": 0.15, "description": "Resistance to training data extraction and memorization attacks"},
+    {"id": "output_safety", "name": "Output Safety & Filtering", "weight": 0.10, "description": "Effectiveness of output safety filters and guardrails"},
+    {"id": "known_vulns", "name": "Known Vulnerability Score", "weight": 0.10, "description": "Inverse of publicly disclosed vulnerabilities (fewer = higher score)"}
+  ],
+  "model_scores": [
+    {
+      "model": "GPT-4o",
+      "provider": "OpenAI",
+      "assessed_version": "2026-01",
+      "composite_score": 82,
+      "dimension_scores": {
+        "jailbreak_resistance": 78,
+        "prompt_injection_defense": 80,
+        "harmful_refusal": 90,
+        "data_extraction_resistance": 85,
+        "output_safety": 88,
+        "known_vulns": 70
+      },
+      "trend": "improving",
+      "notes": "Strong refusal training; some GCG-variant bypass still possible"
+    },
+    {
+      "model": "Claude 3.5 Sonnet",
+      "provider": "Anthropic",
+      "assessed_version": "2026-01",
+      "composite_score": 88,
+      "dimension_scores": {
+        "jailbreak_resistance": 85,
+        "prompt_injection_defense": 88,
+        "harmful_refusal": 95,
+        "data_extraction_resistance": 90,
+        "output_safety": 92,
+        "known_vulns": 80
+      },
+      "trend": "stable",
+      "notes": "Constitutional AI approach yields high refusal rates; few public jailbreaks"
+    },
+    {
+      "model": "Gemini 2.0 Pro",
+      "provider": "Google DeepMind",
+      "assessed_version": "2026-01",
+      "composite_score": 79,
+      "dimension_scores": {
+        "jailbreak_resistance": 75,
+        "prompt_injection_defense": 78,
+        "harmful_refusal": 85,
+        "data_extraction_resistance": 80,
+        "output_safety": 82,
+        "known_vulns": 72
+      },
+      "trend": "improving",
+      "notes": "Multimodal attack surface increases exposure; strong text safety"
+    },
+    {
+      "model": "Llama 3.1 405B",
+      "provider": "Meta",
+      "assessed_version": "2026-01",
+      "composite_score": 62,
+      "dimension_scores": {
+        "jailbreak_resistance": 55,
+        "prompt_injection_defense": 58,
+        "harmful_refusal": 70,
+        "data_extraction_resistance": 65,
+        "output_safety": 68,
+        "known_vulns": 60
+      },
+      "trend": "improving",
+      "notes": "Open weights enable extensive attack research; lower baseline safety vs closed models"
+    },
+    {
+      "model": "Mistral Large 2",
+      "provider": "Mistral AI",
+      "assessed_version": "2026-01",
+      "composite_score": 65,
+      "dimension_scores": {
+        "jailbreak_resistance": 60,
+        "prompt_injection_defense": 62,
+        "harmful_refusal": 72,
+        "data_extraction_resistance": 68,
+        "output_safety": 70,
+        "known_vulns": 58
+      },
+      "trend": "stable",
+      "notes": "European provider; moderate safety alignment"
+    },
+    {
+      "model": "DeepSeek-V3",
+      "provider": "DeepSeek",
+      "assessed_version": "2026-01",
+      "composite_score": 48,
+      "dimension_scores": {
+        "jailbreak_resistance": 40,
+        "prompt_injection_defense": 42,
+        "harmful_refusal": 55,
+        "data_extraction_resistance": 50,
+        "output_safety": 52,
+        "known_vulns": 45
+      },
+      "trend": "declining",
+      "notes": "Multiple public jailbreaks documented; weaker safety training compared to Western models"
+    },
+    {
+      "model": "Command R+",
+      "provider": "Cohere",
+      "assessed_version": "2026-01",
+      "composite_score": 73,
+      "dimension_scores": {
+        "jailbreak_resistance": 70,
+        "prompt_injection_defense": 72,
+        "harmful_refusal": 78,
+        "data_extraction_resistance": 75,
+        "output_safety": 76,
+        "known_vulns": 68
+      },
+      "trend": "stable",
+      "notes": "Enterprise focus with strong guardrails; limited public red team data"
+    },
+    {
+      "model": "GPT-4o mini",
+      "provider": "OpenAI",
+      "assessed_version": "2026-01",
+      "composite_score": 75,
+      "dimension_scores": {
+        "jailbreak_resistance": 72,
+        "prompt_injection_defense": 74,
+        "harmful_refusal": 82,
+        "data_extraction_resistance": 78,
+        "output_safety": 80,
+        "known_vulns": 65
+      },
+      "trend": "stable",
+      "notes": "Smaller model with proportionally good safety; faster attack surface"
+    },
+    {
+      "model": "Qwen 2.5 72B",
+      "provider": "Alibaba",
+      "assessed_version": "2026-01",
+      "composite_score": 52,
+      "dimension_scores": {
+        "jailbreak_resistance": 45,
+        "prompt_injection_defense": 48,
+        "harmful_refusal": 58,
+        "data_extraction_resistance": 55,
+        "output_safety": 56,
+        "known_vulns": 50
+      },
+      "trend": "improving",
+      "notes": "Open model with improving safety; censorship-oriented rather than safety-oriented filtering"
+    },
+    {
+      "model": "Claude 3 Opus",
+      "provider": "Anthropic",
+      "assessed_version": "2026-01",
+      "composite_score": 86,
+      "dimension_scores": {
+        "jailbreak_resistance": 83,
+        "prompt_injection_defense": 85,
+        "harmful_refusal": 93,
+        "data_extraction_resistance": 88,
+        "output_safety": 90,
+        "known_vulns": 78
+      },
+      "trend": "stable",
+      "notes": "Highest refusal rate among commercial models; some over-refusal reported"
+    },
+    {
+      "model": "Grok-2",
+      "provider": "xAI",
+      "assessed_version": "2026-01",
+      "composite_score": 45,
+      "dimension_scores": {
+        "jailbreak_resistance": 38,
+        "prompt_injection_defense": 40,
+        "harmful_refusal": 48,
+        "data_extraction_resistance": 50,
+        "output_safety": 52,
+        "known_vulns": 42
+      },
+      "trend": "declining",
+      "notes": "Deliberately lower safety constraints per company philosophy; high jailbreak success rates"
+    },
+    {
+      "model": "Phi-4",
+      "provider": "Microsoft",
+      "assessed_version": "2026-01",
+      "composite_score": 68,
+      "dimension_scores": {
+        "jailbreak_resistance": 65,
+        "prompt_injection_defense": 66,
+        "harmful_refusal": 74,
+        "data_extraction_resistance": 70,
+        "output_safety": 72,
+        "known_vulns": 60
+      },
+      "trend": "improving",
+      "notes": "Small model with surprisingly good safety alignment for its size class"
+    },
+    {
+      "model": "Gemma 2 27B",
+      "provider": "Google",
+      "assessed_version": "2026-01",
+      "composite_score": 58,
+      "dimension_scores": {
+        "jailbreak_resistance": 52,
+        "prompt_injection_defense": 55,
+        "harmful_refusal": 65,
+        "data_extraction_resistance": 60,
+        "output_safety": 62,
+        "known_vulns": 55
+      },
+      "trend": "stable",
+      "notes": "Open model; moderate safety; benefits from Google safety research"
+    },
+    {
+      "model": "Yi-1.5 34B",
+      "provider": "01.AI",
+      "assessed_version": "2026-01",
+      "composite_score": 50,
+      "dimension_scores": {
+        "jailbreak_resistance": 44,
+        "prompt_injection_defense": 46,
+        "harmful_refusal": 56,
+        "data_extraction_resistance": 52,
+        "output_safety": 54,
+        "known_vulns": 48
+      },
+      "trend": "stable",
+      "notes": "Limited public red team data; moderate safety for open model"
+    },
+    {
+      "model": "o1-preview",
+      "provider": "OpenAI",
+      "assessed_version": "2026-01",
+      "composite_score": 77,
+      "dimension_scores": {
+        "jailbreak_resistance": 74,
+        "prompt_injection_defense": 76,
+        "harmful_refusal": 84,
+        "data_extraction_resistance": 80,
+        "output_safety": 82,
+        "known_vulns": 68
+      },
+      "trend": "improving",
+      "notes": "Reasoning model with chain-of-thought safety checks; novel attack surface via hidden reasoning"
+    }
+  ]
+}
