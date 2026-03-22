@@ -12,6 +12,8 @@
 [![HuggingFace Dataset](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace%20Dataset-yellow.svg)](https://huggingface.co/datasets/alpha-one-index/ai-red-teaming-index)
 [![Kaggle Dataset](https://img.shields.io/badge/%F0%9F%8F%86-Kaggle%20Dataset-blue.svg)](https://www.kaggle.com/datasets/alphaoneindex/ai-red-teaming-index)
 
+> **See also:** [![Awesome AI Index](https://img.shields.io/badge/Awesome_AI_Index-Browse_All-blue.svg)](https://github.com/alpha-one-index/awesome-ai-index) — The definitive index of AI tools, models, papers, and frameworks.
+
 Maintained by [Alpha One Index](https://github.com/alpha-one-index) -- An independent AI security research initiative providing verified, structured red teaming data for engineers, researchers, and security teams.
 
 ### Sponsors
